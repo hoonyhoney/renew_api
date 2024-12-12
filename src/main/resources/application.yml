@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+#    context-path: /api
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    url: jdbc:postgresql://${db.hostname}:${db.port}/${db.name}
+    username: ${db.username}
+    password: ${db.password}
+    driver-class-name: org.postgresql.Driver
+  data:
+#    redis:
+#      host: ${redis.host}
+#      port: ${redis.port}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        default_batch_fetch_size: 100
+        jdbc.batch_size: 100
+        order_inserts: true
+        order_updates: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    ROOT: info
+    org.springframework.jdbc: debug
+
+apiNinjas:
+  token: IlUI1OV1J+Yofs0ib5q3hg==2FkpjYRP8WMVcXmz
+
+#웹훅테스트
+
+jwt:
+  secret: eyJzdWIiOiJqdW5nbW9jaGEiLCJhdXRoIjoidGVhbTMifQ
+  access-expiration: 3600000 # 60분
+  refresh-expiration: 604800000 # 7일
