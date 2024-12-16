@@ -80,7 +80,7 @@ public class SecurityConfig {
 
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration corsConfiguration = new CorsConfiguration();
-    corsConfiguration.setAllowedOrigins(List.of("http://localhost:3000", "https://jungmocha.co.kr"));
+    corsConfiguration.setAllowedOrigins(List.of("http://localhost:3001", "https://renew.jungmocha.co.kr"));
     corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
     corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
     corsConfiguration.setAllowCredentials(true);
